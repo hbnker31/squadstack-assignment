@@ -53,58 +53,58 @@ const SectionContainer =(props) =>{
     //         content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
     //     }
     // ])
-    // const [dataList, setDataList] = useState([
-    //     {   
-    //         headingImage: "",
-    //         JobTitle:"Job 1",
-    //         BusinessTitle: "business 1",
-    //         amount:20000,
-    //         time: "2 hours"
-    //     },
-    //     {   
-    //         headingImage: "",
-    //         JobTitle:"Job 2",
-    //         BusinessTitle: "business 2",
-    //         amount:20000,
-    //         time: "2 hours"
-    //     },
-    //     {   
-    //         headingImage: "",
-    //         JobTitle:"Job 3",
-    //         BusinessTitle: "business 3",
-    //         amount:20000,
-    //         time: "2 hours"
-    //     },
-    //     {   
-    //         headingImage: "",
-    //         JobTitle:"Job 4",
-    //         BusinessTitle: "business 4",
-    //         amount:20000,
-    //         time: "2 hours"
-    //     }
-    // ])
     const [dataList, setDataList] = useState([
         {   
             headingImage: "",
-            heading:"This is an article title",
-            content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+            JobTitle:"Job 1",
+            BusinessTitle: "business 1",
+            amount:20000,
+            time: "2 hours"
         },
-        {
+        {   
             headingImage: "",
-            heading:"This is an article title",
-            content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+            JobTitle:"Job 2",
+            BusinessTitle: "business 2",
+            amount:20000,
+            time: "2 hours"
         },
-        {
+        {   
             headingImage: "",
-            heading:"This is an article title",
-            content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+            JobTitle:"Job 3",
+            BusinessTitle: "business 3",
+            amount:20000,
+            time: "2 hours"
         },
-        {
+        {   
             headingImage: "",
-            heading:"This is an article title",
-            content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+            JobTitle:"Job 4",
+            BusinessTitle: "business 4",
+            amount:20000,
+            time: "2 hours"
         }
     ])
+    // const [dataList, setDataList] = useState([
+    //     {   
+    //         headingImage: "",
+    //         heading:"This is an article title",
+    //         content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+    //     },
+    //     {
+    //         headingImage: "",
+    //         heading:"This is an article title",
+    //         content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+    //     },
+    //     {
+    //         headingImage: "",
+    //         heading:"This is an article title",
+    //         content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+    //     },
+    //     {
+    //         headingImage: "",
+    //         heading:"This is an article title",
+    //         content: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+    //     }
+    // ])
     return (
         <div className={Styles.SectionContainer}>
             <span>{type}</span>
@@ -121,7 +121,7 @@ const SectionContainer =(props) =>{
                         if(type==="Announcements")
                             return <Announcement key={data.heading} data={{}} />
                         else if(type==="Recommended jobs for you")
-                            return <RecommendedJobs key={data.heading} data={{}} />
+                            return <RecommendedJobs key={data.heading} data={data} />
                         else if(type==="Community")
                             return <Community key={data.heading} data={data} />
                     })
