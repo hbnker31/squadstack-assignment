@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Announcement from "./Announcements";
 import RecommendedJobs from "./RecommendedJobs";
 import Slider from "react-slick";
@@ -14,7 +14,6 @@ const SectionContainer = (props) => {
     limit:8,
     offset:0
   })
-  const sliderRef= useRef()
   const [dataList, setDataList] = useState([])
   const loadingArray=[{},{},{},{}]
   const handlePagination= (current, next) =>{
@@ -100,7 +99,7 @@ const SectionContainer = (props) => {
   return (
     <div className={Styles.SectionContainer}>
         <span>{type}</span>
-        <Slider ref={sliderRef} {...settings} className={Styles.Slider}>
+        <Slider {...settings} className={Styles.Slider}>
             {(loading?loadingArray :dataList).map((data) => {
                 if (type === "Announcements")
                 return <Announcement key={data.id} data={data} loading={loading} />;

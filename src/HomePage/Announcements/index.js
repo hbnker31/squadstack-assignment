@@ -1,7 +1,6 @@
 import { Skeleton } from '@mui/material';
 import Styles from './index.module.scss'
 
-import Grid from '@mui/material/Grid';
 const  Announcement =(props) =>{
     const {data, loading} = props
 
