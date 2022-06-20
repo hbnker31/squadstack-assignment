@@ -1,6 +1,6 @@
 .AnnouncementDiv{
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 12px;
@@ -17,13 +17,25 @@
         flex-direction: row;
         gap: 10px;
         width: 100%;
+        img{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
         span{
         }
     }
     .announcementSubHeading{
         font-weight: 700;
+        margin: 8px 0;
     }
     .announcementContent{
         color: #757575;
+        display: block;/* or inline-block */
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 48px;
+        line-height: 24px;
     }
 }

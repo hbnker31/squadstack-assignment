@@ -1,9 +1,18 @@
+.HomeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(100% -300px);
+}
+
 .SectionContainer{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 12px;
     margin-bottom: 50px;
+    width: calc(100% - 60px);
     >span{
         font-family: 'Inter';
         font-style: normal;
@@ -12,22 +21,30 @@
         color: #323232;
         margin-left: 28px;
     }
+    .Slider{
+        gap: 20px;
+        
+    }
     >div{
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        gap: 8px;
+        gap: 8px !important;
         margin-top: 20px;
-        button{
-            border: 0;
-            background-color: transparent;
-            &:hover{
-                cursor: pointer;
-            }
-            &:disabled{
+        .Buttons{
+            display: flex;
+            justify-content: center;
+            button{
+                border: 0;
+                background-color: transparent;
                 &:hover{
-                    cursor: auto;
+                    cursor: pointer;
+                }
+                &:disabled{
+                    &:hover{
+                        cursor: auto;
+                    }
                 }
             }
         }

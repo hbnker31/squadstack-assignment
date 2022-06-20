@@ -1,0 +1,28 @@
+.ListContainer{
+    padding: 24px !important;
+    .ListItemContainer{
+        width: 240px;
+        background: #EEEEEE;
+        border-radius: 8px;
+        padding: 0;
+        span{
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            color: #323232;
+
+        }
+        >div{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        .ListIcon{
+            min-width: 30px;
+            width: auto;
+        }
+    }
+
+}

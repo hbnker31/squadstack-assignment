@@ -2,31 +2,35 @@ import { Skeleton } from '@mui/material';
 import Styles from './index.module.scss'
 
 const  RecommendedJobs =(props) =>{
-    const {data} = props
-
+    const {data, loading} = props
+    const numberFormat = (value) =>{
+        return new Intl.NumberFormat('en-IN', {
+            maximumFractionDigits: 0, 
+            minimumFractionDigits: 0, 
+        }).format(value);}
     return (
         <div className={Styles.RecommendedJobsDiv}>
             <div className={Styles.RecommendedJobsHeadingImageDiv}>
-                {data.headingImage?<img src={data.headingImage} alt= "recommendedJobImage" loading="lazy" />:<Skeleton animation="wave" variant="circular" width={48} height={48} />}
+                {!loading?<img className={Styles.RecommendedJobsHeadingImage} src={data.businessLogo} alt= "recommendedJobImage" loading="lazy" />:<Skeleton animation="wave" variant="circular" width={48} height={48} />}
                 <div className={Styles.RecommendedJobsHeadingDiv}>
-                    {data.JobTitle?<span>{data.JobTitle}</span>:<Skeleton animation="wave" variant="text" height={40} width='50%'  />}
-                    {data.BusinessTitle?<span className={Styles.bussinessTitle}>{data.BusinessTitle}</span>:<Skeleton animation="wave" variant="text" height={40} width='50%'  />}
+                    {!loading?<span>{data.title}</span>:<Skeleton animation="wave" variant="text" height={40} width='50%'  />}
+                    {!loading?<span className={Styles.bussinessTitle}>{data.businessName}</span>:<Skeleton animation="wave" variant="text" height={40} width='50%'  />}
                 </div>
             </div>
             <hr className={Styles.RecommendedJobsSeperator}/>
             <div className={Styles.RecommendedJobsDetailsDiv}>
-                {data.amount?<div >
+                {!loading?<div >
                     <img src="/images/recommendedJobs/clock.png" alt= "reco" loading="lazy" />
                     <div className={Styles.RecommendedJobsHeadingDiv}>
                         <span>Upto</span>
-                        <span>{data.amount}</span>
+                        <span>{numberFormat(data.earnings)}</span>
                     </div>
                 </div>:<Skeleton animation="wave" variant="rectangle" height={60} width='40%'  />}
-                {data.time?<div >
+                {!loading?<div >
                     <img src="/images/recommendedJobs/clock.png" alt= "reco" loading="lazy" />
                     <div className={Styles.RecommendedJobsHeadingDiv}>
                         <span>Time</span>
-                        <span>{data.time}</span>
+                        <span>{`${data.estimatedTime} hours`}</span>
                     </div>
                 </div>:<Skeleton animation="wave" variant="rectangle" height={60} width='40%'  />}
             </div>

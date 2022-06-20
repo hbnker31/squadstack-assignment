@@ -1,6 +1,4 @@
-.App {
-  width: fit-content;
-}
+
 * {
   margin: 0;
   font-style: normal;
@@ -9,4 +7,13 @@
 }
 div{
   width: 100%;
+}
+.slick-slide{
+  background-color: transparent;
+  width: auto !important;
+  
+}
+.slick-track{
+  display: flex !important;
+  justify-content: space-between !important;
 }
